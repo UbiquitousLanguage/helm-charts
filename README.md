@@ -5,4 +5,4 @@ Add this repo to Helm to use charts:
 https://ubiquitousas.github.io/helm-charts/
 
 Charts:
-- [auto-deploy-aspnetcore](tree/master/auto-deploy-aspnetcore)
+- [auto-deploy-aspnetcore](https://github.com/UbiquitousAS/helm-charts/tree/master/auto-deploy-aspnetcore)
