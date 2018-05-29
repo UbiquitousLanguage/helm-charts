@@ -4,6 +4,7 @@ Use provided `gitlab-ci.yml` file, don't forget to add the dot to make it work (
 
 Difference with the default auto-deploy file:
  - Kubernetes version is 1.10.1
+ - Heroku buildpacks support is removed since this Auto-Deploy CI file is only for Docker-enabled projects
  - Sends the environment name to the new chart, so you will have it in `ASPNETCORE_ENVIRONMENT`
  - Adds this chart repository
  - Uses `/ping` and `/health` endpoint for readyness and liveness. These endpoints provided by [AppMetrics](https://www.app-metrics.io/web-monitoring/aspnet-core/health/#endpoints-provided) out of the box.
