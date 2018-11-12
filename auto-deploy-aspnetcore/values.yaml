@@ -18,6 +18,8 @@ service:
   url: http://my.host.com/
   externalPort: 5000
   internalPort: 5000
+ingress:
+  tls_enabled: true
 postgresql:
   enabled: false
 resources:
