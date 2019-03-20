@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "trackableappname" . }}
+  annotations:
+    {{ if .Values.gitlab.app }}app.gitlab.com/app: {{ .Values.gitlab.app | quote }}{{ end }}
+    {{ if .Values.gitlab.env }}app.gitlab.com/env: {{ .Values.gitlab.env | quote }}{{ end }}
   labels:
     app: {{ template "appname" . }}
     track: "{{ .Values.application.track }}"
@@ -13,6 +16,10 @@ spec:
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
+      annotations:
+        checksum/application-secrets: "{{ .Values.application.secretChecksum }}"
+        {{ if .Values.gitlab.app }}app.gitlab.com/app: {{ .Values.gitlab.app | quote }}{{ end }}
+        {{ if .Values.gitlab.env }}app.gitlab.com/env: {{ .Values.gitlab.env | quote }}{{ end }}
       labels:
         app: {{ template "appname" . }}
         track: "{{ .Values.application.track }}"
@@ -25,6 +32,11 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- if .Values.application.secretName }}
+        envFrom:
+        - secretRef:
+            name: {{ .Values.application.secretName }}
+        {{- end }}
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: {{ .Values.application.environment | quote }}
@@ -33,15 +45,15 @@ spec:
           containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
           httpGet:
-            path: /ping
+            path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.service.internalPort }}
-          initialDelaySeconds: 15
-          timeoutSeconds: 15
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
         readinessProbe:
           httpGet:
-            path: /health
+            path: {{ .Values.readinessProbe.path }}
             port: {{ .Values.service.internalPort }}
-          initialDelaySeconds: 5
-          timeoutSeconds: 3
+          initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}

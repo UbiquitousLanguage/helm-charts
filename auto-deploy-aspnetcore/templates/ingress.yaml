@@ -12,17 +12,39 @@ metadata:
     kubernetes.io/tls-acme: "true"
     kubernetes.io/ingress.class: "nginx"
 spec:
-{{- if (.Values.ingress.tls_enabled) and eq .Values.ingress.tls_enabled "true" }}
+{{- if .Values.ingress.tls.enabled }}
   tls:
   - hosts:
+{{- if .Values.service.commonName }}
+    - {{ template "hostname" .Values.service.commonName }}
+{{- end }}
     - {{ template "hostname" .Values.service.url }}
-    secretName: {{ template "fullname" . }}-tls
+{{- if .Values.service.additionalHosts }}
+{{- range $host := .Values.service.additionalHosts }}
+    - {{ $host }}
+{{- end -}}
+{{- end }}
+    secretName: {{ .Values.ingress.tls.secretName | default (printf "%s-tls" (include "fullname" .)) }}
+{{- end }}
   rules:
   - host: {{ template "hostname" .Values.service.url }}
     http:
+      &httpRule
       paths:
       - path: /
         backend:
           serviceName: {{ template "fullname" . }}
           servicePort: {{ .Values.service.externalPort }}
+{{- if .Values.service.commonName }}
+  - host: {{ template "hostname" .Values.service.commonName }}
+    http:
+      <<: *httpRule
+{{- end -}}
+{{- if .Values.service.additionalHosts }}
+{{- range $host := .Values.service.additionalHosts }}
+  - host: {{ $host }}
+    http:
+      <<: *httpRule
+{{- end -}}
+{{- end -}}
 {{- end -}}
