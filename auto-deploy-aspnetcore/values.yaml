@@ -24,7 +24,9 @@ service:
   additionalHosts:
   externalPort: 5000
   internalPort: 5000
+  annotations:
 ingress:
+  class: "nginx"
   tls:
     enabled: true
     secretName: ""
@@ -47,3 +49,5 @@ podDisruptionBudget:
   enabled: false
   # minAvailable: 1
   maxUnavailable: 1
+podAnnotations:
+  prometheus.io/scrape: "true"
