@@ -26,6 +26,7 @@ service:
   internalPort: 5000
   annotations:
 ingress:
+  enabled: false
   class: "nginx"
   tls:
     enabled: true
@@ -35,7 +36,7 @@ livenessProbe:
   initialDelaySeconds: 60
   timeoutSeconds: 15
 readinessProbe:
-  path: "/health"
+  path: "/ping"
   initialDelaySeconds: 60
   timeoutSeconds: 10
 resources:

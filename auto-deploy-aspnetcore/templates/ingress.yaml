@@ -1,4 +1,4 @@
-{{- if .Values.service.enabled -}}
+{{- if .Values.ingress.enabled -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -9,7 +9,9 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
+{{- if .Values.ingress.tls.enabled }}
     kubernetes.io/tls-acme: "true"
+{{- end }}
     kubernetes.io/ingress.class: {{ .Values.ingress.class }}
 spec:
 {{- if .Values.ingress.tls.enabled }}
