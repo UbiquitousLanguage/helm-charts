@@ -20,7 +20,7 @@ spec:
         checksum/application-secrets: "{{ .Values.application.secretChecksum }}"
         {{ if .Values.gitlab.app }}app.gitlab.com/app: {{ .Values.gitlab.app | quote }}{{ end }}
         {{ if .Values.gitlab.env }}app.gitlab.com/env: {{ .Values.gitlab.env | quote }}{{ end }}
-{{ toYaml .Values.podAnnotations | indent 10 }}
+{{ toYaml .Values.podAnnotations | indent 8 }}
       labels:
         app: {{ template "appname" . }}
         track: "{{ .Values.application.track }}"
@@ -28,7 +28,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       imagePullSecrets:
-{{ toYaml .Values.image.secrets | indent 10 }}
+{{ toYaml .Values.image.secrets | indent 8 }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -57,4 +57,4 @@ spec:
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
         resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.resources | indent 10 }}
