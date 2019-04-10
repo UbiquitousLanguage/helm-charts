@@ -52,3 +52,5 @@ podDisruptionBudget:
   maxUnavailable: 1
 podAnnotations:
   prometheus.io/scrape: "true"
+podLabels:
+
