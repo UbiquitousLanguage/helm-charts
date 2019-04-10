@@ -20,13 +20,13 @@ spec:
         checksum/application-secrets: "{{ .Values.application.secretChecksum }}"
         {{ if .Values.gitlab.app }}app.gitlab.com/app: {{ .Values.gitlab.app | quote }}{{ end }}
         {{ if .Values.gitlab.env }}app.gitlab.com/env: {{ .Values.gitlab.env | quote }}{{ end }}
-{{ toYaml .Values.podAnnotations | indent 8 }}
+{{ toYaml .Values.pod.annotations | indent 8 }}
       labels:
         app: {{ template "appname" . }}
         track: "{{ .Values.application.track }}"
         tier: "{{ .Values.application.tier }}"
         release: {{ .Release.Name }}
-{{ toYaml .Values.podLabels | indent 8 }}
+{{ toYaml .Values.pod.labels | indent 8 }}
     spec:
       imagePullSecrets:
 {{ toYaml .Values.image.secrets | indent 8 }}

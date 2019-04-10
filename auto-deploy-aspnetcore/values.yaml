@@ -50,7 +50,8 @@ podDisruptionBudget:
   enabled: false
   # minAvailable: 1
   maxUnavailable: 1
-podAnnotations:
-  prometheus.io/scrape: "true"
-podLabels:
+pod:
+  annotations:
+    prometheus.io/scrape: "true"
+  labels:
 
