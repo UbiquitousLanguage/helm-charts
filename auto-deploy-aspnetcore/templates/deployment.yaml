@@ -26,7 +26,7 @@ spec:
         track: "{{ .Values.application.track }}"
         tier: "{{ .Values.application.tier }}"
         release: {{ .Release.Name }}
-{{ toYaml .Values.pod.labels | indent 8 }}
+{{ if .Values.gitlab.app }}{{ toYaml .Values.pod.labels | indent 8 }}{{ end }}
     spec:
       imagePullSecrets:
 {{ toYaml .Values.image.secrets | indent 8 }}

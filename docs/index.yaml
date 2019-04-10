@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   auto-deploy-aspnetcore:
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.831952+02:00
+    created: 2019-04-10T12:29:53.313044+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
-    digest: 5741d80b4df52de5d671b2496afd854281ae828f7f1efff9d7337597e8b87112
+    digest: bca7430c0b9763a35d70a4cbd18d895f08a833167cb62f140337976090b3b866
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
     name: auto-deploy-aspnetcore
     urls:
     - auto-deploy-aspnetcore-0.2.10.tgz
     version: 0.2.10
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.837598+02:00
+    created: 2019-04-10T12:29:53.320498+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: d90719ad3ef8f95652c01f3394af1eef699b7002d245134898d267c706592e75
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -20,7 +20,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.9.tgz
     version: 0.2.9
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.837032+02:00
+    created: 2019-04-10T12:29:53.31936+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 09777810ff4d5d15f69119635d38a37724957c493cd64c74f9b257ccd41cebd7
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -29,7 +29,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.8.tgz
     version: 0.2.8
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.836421+02:00
+    created: 2019-04-10T12:29:53.318367+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 92e743320111835b76ea58c8c60776cf5a38b417a1004b0b5398e048ceeee9f2
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -38,7 +38,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.7.tgz
     version: 0.2.7
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.835704+02:00
+    created: 2019-04-10T12:29:53.317188+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 56da620f2574b70b8048d80224ebdba10160b7f63b43be172f3d4579a082aeb4
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -47,7 +47,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.6.tgz
     version: 0.2.6
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.835088+02:00
+    created: 2019-04-10T12:29:53.316465+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 079453e8aba5b0e69a85d70b6ba20f529fdb569abad06c3d417c6ccb50a8bc6a
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -56,7 +56,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.5.tgz
     version: 0.2.5
   - apiVersion: v1
-    created: 2019-04-10T10:03:47.832828+02:00
+    created: 2019-04-10T12:29:53.314241+02:00
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 4d5d43d95a5e074f98f262f989ef5bf78557d1d60385d70046471cd427a73916
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -64,4 +64,4 @@ entries:
     urls:
     - auto-deploy-aspnetcore-0.2.4.tgz
     version: 0.2.4
-generated: 2019-04-10T10:03:47.830979+02:00
+generated: 2019-04-10T12:29:53.311188+02:00
