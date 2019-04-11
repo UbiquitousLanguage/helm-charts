@@ -27,7 +27,7 @@ spec:
     - {{ $host }}
 {{- end -}}
 {{- end }}
-    secretName: {{ .Values.ingress.tls.secretName | default (printf "%s-tls" (include "fullname" .)) }}
+    secretName: {{ .Values.ingress.tls.secretName | default (printf "%s-tls" (include "appname" .)) }}
 {{- end }}
   rules:
   - host: {{ template "hostname" .Values.service.url }}
@@ -36,7 +36,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ template "fullname" . }}
+          serviceName: {{ template "appname" . }}
           servicePort: {{ .Values.service.externalPort }}
 {{- if .Values.service.commonName }}
   - host: {{ template "hostname" .Values.service.commonName }}
