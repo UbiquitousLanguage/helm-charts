@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "appname" . }}
   labels:
     app: {{ template "appname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version| replace "+" "_" }}"
@@ -13,6 +13,7 @@ metadata:
     kubernetes.io/tls-acme: "true"
 {{- end }}
     kubernetes.io/ingress.class: {{ .Values.ingress.class }}
+{{ if .Values.ingress.annotations }}{{ toYaml .Values.ingress.annotations | indent 6 }}{{ end }}
 spec:
 {{- if .Values.ingress.tls.enabled }}
   tls:

@@ -31,6 +31,7 @@ ingress:
   tls:
     enabled: true
     secretName: ""
+  annotations:
 livenessProbe:
   path: "/health"
   initialDelaySeconds: 60
