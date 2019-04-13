@@ -18,6 +18,7 @@ gitlab:
   env:
 service:
   enabled: true
+  serviceName:
   name: web
   type: ClusterIP
   url: http://my.host.com/
