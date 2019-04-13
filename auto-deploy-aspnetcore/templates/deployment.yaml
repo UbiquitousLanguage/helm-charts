@@ -22,7 +22,7 @@ spec:
         {{ if .Values.gitlab.env }}app.gitlab.com/env: {{ .Values.gitlab.env | quote }}{{ end }}
 {{ toYaml .Values.pod.annotations | indent 8 }}
       labels:
-        app: {{ template "appname" . }}
+        app: {{ template "trackableappname" . }}
         track: "{{ .Values.application.track }}"
         tier: "{{ .Values.application.tier }}"
         release: {{ .Release.Name }}
