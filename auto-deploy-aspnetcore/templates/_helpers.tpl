@@ -7,6 +7,14 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+Define a friendly service name for the environment
+*/}}
+{{- define "serviceName" -}}
+{{- $serviceName := default .Release.Name .Values.serviceNameOverride -}}
+{{- printf "%s" $serviceName | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
