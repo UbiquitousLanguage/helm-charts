@@ -35,19 +35,19 @@ ingress:
   annotations:
 livenessProbe:
   path: "/health"
-  initialDelaySeconds: 60
+  initialDelaySeconds: 10
   timeoutSeconds: 15
 readinessProbe:
   path: "/ping"
-  initialDelaySeconds: 60
+  initialDelaySeconds: 10
   timeoutSeconds: 10
 resources:
   limits:
-    cpu: 300m
-    memory: 512Mi
+    cpu: 200m
+    memory: 256Mi
   requests:
-    cpu: 300m
-    memory: 512Mi
+    cpu: 200m
+    memory: 256Mi
 podDisruptionBudget:
   enabled: false
   # minAvailable: 1
