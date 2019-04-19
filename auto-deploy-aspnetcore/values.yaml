@@ -37,17 +37,25 @@ livenessProbe:
   path: "/health"
   initialDelaySeconds: 10
   timeoutSeconds: 15
+  periodSeconds: 10
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 5
 readinessProbe:
   path: "/ping"
   initialDelaySeconds: 10
   timeoutSeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 5
 resources:
   limits:
-    cpu: 200m
-    memory: 256Mi
+    cpu: 500m
+    memory: 512Mi
   requests:
     cpu: 200m
-    memory: 256Mi
+    memory: 128Mi
 podDisruptionBudget:
   enabled: false
   # minAvailable: 1
