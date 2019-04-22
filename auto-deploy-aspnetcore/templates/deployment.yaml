@@ -26,6 +26,7 @@ spec:
         track: "{{ .Values.application.track }}"
         tier: "{{ .Values.application.tier }}"
         release: {{ .Release.Name }}
+        env: {{ .Values.application.environment | quote }}
 {{ if .Values.pod.labels }}{{ toYaml .Values.pod.labels | indent 8 }}{{ end }}
     spec:
       imagePullSecrets:
