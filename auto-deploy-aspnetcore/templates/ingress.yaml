@@ -36,7 +36,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ template "appname" . }}
+          serviceName: {{ template "serviceName" . }}
           servicePort: {{ .Values.service.externalPort }}
 {{- if .Values.service.commonName }}
   - host: {{ template "hostname" .Values.service.commonName }}
