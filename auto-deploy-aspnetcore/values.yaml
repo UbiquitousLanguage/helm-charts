@@ -13,10 +13,9 @@ application:
   tier: web
   secretName:
   secretChecksum:
-  env:
 gitlab:
   app:
-  env:
+  envs:
 service:
   enabled: true
   serviceName:
@@ -65,4 +64,5 @@ pod:
   annotations:
     prometheus.io/scrape: "true"
   labels:
+  env: []
 

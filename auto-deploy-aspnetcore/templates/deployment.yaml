@@ -43,7 +43,7 @@ spec:
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: {{ .Values.application.environment | quote }}
-{{ toYaml .Values.application.env | indent 8 }}
+{{ toYaml .Values.pod.env | indent 12 }}
         ports:
         - name: "{{ .Values.service.name }}"
           containerPort: {{ .Values.service.internalPort }}
