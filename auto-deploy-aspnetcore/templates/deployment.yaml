@@ -47,7 +47,7 @@ spec:
           value: {{ .Values.gitlab.envName }}
         - name: GITLAB_ENVIRONMENT_URL
           value: {{ .Values.gitlab.envURL }}
-{{ if .Values.pod.env }}{{ toYaml .Values.pod.env | indent 10 }}{{ end }}
+{{ if .Values.pod.env }}{{ toYaml .Values.pod.env | indent 8 }}{{ end }}
         ports:
         - name: "{{ .Values.service.name }}"
           containerPort: {{ .Values.service.internalPort }}
