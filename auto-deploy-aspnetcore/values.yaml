@@ -71,5 +71,5 @@ pod:
   annotations:
     prometheus.io/scrape: "true"
   labels:
-  env: []
+  env: {}
 
