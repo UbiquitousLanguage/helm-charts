@@ -32,7 +32,7 @@ spec:
       imagePullSecrets:
 {{ toYaml .Values.image.secrets | indent 8 }}
       containers:
-      - name: {{ template "appname" . }}-{{ .Values.gitlab.envName }}
+      - name: {{ if .Values.gitlab.app }}{{ .Values.gitlab.app | quote }}{{else}}{{ .Chart.Name }}{{ end }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         {{- if .Values.application.secretName }}
