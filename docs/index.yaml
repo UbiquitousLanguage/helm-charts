@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   auto-deploy-aspnetcore:
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.2349+02:00"
+    created: "2020-06-24T11:26:54.282724+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
-    digest: bf9202513ef75e548da8afb9837e0f9a1222387beaaf80a83e7fe602b6af853a
+    digest: a48fe74ef9a6e12e33341ae01d88afeabfa4aad11da3138e0927bc2163e418bf
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
     name: auto-deploy-aspnetcore
     urls:
     - auto-deploy-aspnetcore-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.228229+02:00"
+    created: "2020-06-24T11:26:54.27702+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: e1b0e0b4b296d516675a345618b2211ce40ee44b005dce36dddaeb80d93c9dee
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -20,7 +20,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.13.tgz
     version: 0.2.13
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.227429+02:00"
+    created: "2020-06-24T11:26:54.276317+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 86166280acce03bde2d691b3d932ccc4ec2eb03c488aba7e12f33bc18e211c4e
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -29,7 +29,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.12.tgz
     version: 0.2.12
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.226658+02:00"
+    created: "2020-06-24T11:26:54.275633+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 87c76295d7a8afed71f86216b6488bd4a1bb94a1b6e4d6f4725f4e385a5429c0
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -38,7 +38,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.11.tgz
     version: 0.2.11
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.226057+02:00"
+    created: "2020-06-24T11:26:54.274872+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 3a5b548a5ef42908aada5c25fd2060318c4c17628719541cf7bb94e1d1e78625
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -47,7 +47,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.10.tgz
     version: 0.2.10
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.233758+02:00"
+    created: "2020-06-24T11:26:54.281699+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: d90719ad3ef8f95652c01f3394af1eef699b7002d245134898d267c706592e75
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -56,7 +56,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.9.tgz
     version: 0.2.9
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.233107+02:00"
+    created: "2020-06-24T11:26:54.28109+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 09777810ff4d5d15f69119635d38a37724957c493cd64c74f9b257ccd41cebd7
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -65,7 +65,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.8.tgz
     version: 0.2.8
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.232382+02:00"
+    created: "2020-06-24T11:26:54.280481+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 92e743320111835b76ea58c8c60776cf5a38b417a1004b0b5398e048ceeee9f2
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -74,7 +74,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.7.tgz
     version: 0.2.7
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.231526+02:00"
+    created: "2020-06-24T11:26:54.279862+02:00"
     description: GitLab's Auto-deploy Helm Chart adapted for .NET Core
     digest: 56da620f2574b70b8048d80224ebdba10160b7f63b43be172f3d4579a082aeb4
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
@@ -83,7 +83,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.6.tgz
     version: 0.2.6
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.230968+02:00"
+    created: "2020-06-24T11:26:54.279231+02:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -97,7 +97,7 @@ entries:
     - auto-deploy-aspnetcore-0.2.5.tgz
     version: 0.2.5
   - apiVersion: v1
-    created: "2020-06-24T10:58:02.229399+02:00"
+    created: "2020-06-24T11:26:54.277989+02:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -110,4 +110,4 @@ entries:
     urls:
     - auto-deploy-aspnetcore-0.2.4.tgz
     version: 0.2.4
-generated: "2020-06-24T10:58:02.223447+02:00"
+generated: "2020-06-24T11:26:54.273512+02:00"
