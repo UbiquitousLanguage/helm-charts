@@ -4,7 +4,7 @@
 replicaCount: 1
 strategyType:
 enableSelector:
-deploymentApiVersion: app/v1
+deploymentApiVersion: apps/v1
 image:
   repository: gitlab.example.com/group/project
   tag: stable
