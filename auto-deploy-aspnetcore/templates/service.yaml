@@ -1,25 +1,29 @@
-{{- if .Values.service.enabled -}}
+{{- if and (.Values.service.enabled) (eq .Values.application.track "stable") -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "serviceName" . }}
-  labels:
-    app: {{ template "appname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
-{{ if .Values.service.annotations }}
+  name: {{ template "fullname" . }}
   annotations:
-{{ toYaml .Values.service.annotations | indent 4 }}
-{{ end }}
+  {{- if .Values.service.annotations }}
+  {{ toYaml .Values.service.annotations | indent 4 }}
+  {{- end }}
+  {{- if .Values.prometheus.metrics }}
+prometheus.io/scrape: "true"
+prometheus.io/port: "{{ .Values.service.internalPort }}"
+  {{- end }}
+labels:
+  app: {{ template "appname" . }}
+  chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+  release: {{ .Release.Name }}
+  heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.externalPort }}
-    targetPort: {{ .Values.service.internalPort }}
-    protocol: TCP
-    name: {{ .Values.service.name }}
+    - port: {{ .Values.service.externalPort }}
+      targetPort: {{ .Values.service.internalPort }}
+      protocol: TCP
+      name: {{ .Values.service.name }}
   selector:
     app: {{ template "appname" . }}
     tier: "{{ .Values.application.tier }}"
-{{- end -}}
+  {{- end -}}
