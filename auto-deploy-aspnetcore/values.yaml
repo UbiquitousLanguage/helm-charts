@@ -13,6 +13,7 @@ image:
     - name: gitlab-registry
 podAnnotations: {}
 podEnvironment: {}
+podPorts: {}
 application:
   track: stable
   tier: web

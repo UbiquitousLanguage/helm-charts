@@ -64,6 +64,7 @@ spec:
         ports:
         - name: "{{ .Values.service.name }}"
           containerPort: {{ .Values.service.internalPort }}
+{{ if .Values.podPorts }}{{ toYaml .Values.podPorts | indent 8 }}{{ end }}
         livenessProbe:
 {{- if eq .Values.livenessProbe.probeType "httpGet" }}
           httpGet:
