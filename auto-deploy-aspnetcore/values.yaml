@@ -12,6 +12,7 @@ image:
   secrets:
     - name: gitlab-registry
 podAnnotations: {}
+podEnvironment: {}
 application:
   track: stable
   tier: web
@@ -68,7 +69,6 @@ readinessProbe:
   timeoutSeconds: 3
   scheme: "HTTP"
   probeType: "httpGet"
-
 resources:
   #  limits:
   #    cpu: 100m
